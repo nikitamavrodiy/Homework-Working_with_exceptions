@@ -4,6 +4,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Car extends Transport implements Competing {
     private final BodyType bodyType;
+
     public Car(String brand, String model, float engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
         this.bodyType = bodyType;
