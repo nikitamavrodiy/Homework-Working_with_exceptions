@@ -36,6 +36,16 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
+    public void passDiagnostics() {
+        System.out.println("Автобус не может пройти диагностику. Отмена.");
+    }
+
+    public boolean isDiagnosed() throws BusDiagnosticException {
+        throw new BusDiagnosticException("Автобус "+this.toString()+" в диагностике не нуждается");
+    }
+
+
+    @Override
     public void pitStop() {
         System.out.printf("Bus %s %s performed pit-stop",
                 this.getBrand(),

@@ -36,6 +36,12 @@ public class Car extends Transport implements Competing {
     }
 
     @Override
+    public void passDiagnostics() {
+        setDiagnosed(true);
+        System.out.println("Машина прошла диагностику");
+    }
+
+    @Override
     public void pitStop() {
         System.out.printf("Car %s %s performed pit-stop",
                 this.getBrand(),

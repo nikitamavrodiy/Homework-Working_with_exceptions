@@ -34,6 +34,12 @@ public class Truck extends Transport implements Competing {
     }
 
     @Override
+    public void passDiagnostics() {
+        setDiagnosed(true);
+        System.out.println("Грузовик прошел диагностику");
+    }
+
+    @Override
     public void pitStop() {
         System.out.printf("Truck %s %s performed pit-stop",
                 this.getBrand(),

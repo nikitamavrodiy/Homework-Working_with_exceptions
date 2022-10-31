@@ -19,6 +19,20 @@ public abstract class Driver<T extends Transport> {
         this.car = car;
     }
 
+    public void checkCategory(){
+        char[] categoryChar = category.toCharArray();
+        for (char c : categoryChar) {
+            if (!isValidChar(c) | categoryChar.length != 1) {
+                throw new RuntimeException("Необходимо указать тип прав!");
+            }
+        }
+    }
+
+    public static boolean isValidChar(char symbol) {
+        String allowedSymbols = "BCDbcd";
+        return allowedSymbols.contains("" + symbol);
+    }
+
     public void startMovement() {
         System.out.printf("Driver %s started moving", this.fullName);
         System.out.println();
