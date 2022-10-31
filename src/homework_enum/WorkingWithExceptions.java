@@ -3,7 +3,7 @@ package homework_enum;
 import homework_enum.transport.*;
 
 
-public class HomeworkEnum {
+public class WorkingWithExceptions {
     public static void main(String[] args) {
         Car car = new Car("bmw","x5", 1.5f, BodyType.CROSSOVER);
         car.printType();
