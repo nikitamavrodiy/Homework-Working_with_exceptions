@@ -1,9 +1,14 @@
 package homework_enum.transport;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Bus extends Transport implements Competing {
     private final PassengerCapacity passengerCapacity;
+    private List<Sponsor> sponsorList = new ArrayList<>();
+    private List<Mechanic> mechanicList = new LinkedList<>();
 
     public Bus(String brand, String model, float engineVolume, PassengerCapacity passengerCapacity) {
         super(brand, model, engineVolume);
@@ -61,5 +66,13 @@ public class Bus extends Transport implements Competing {
     @Override
     public int getMaxSpeed() {
         return ThreadLocalRandom.current().nextInt(1, 400);
+    }
+
+    public List<Sponsor> getSponsorList() {
+        return sponsorList;
+    }
+
+    public List<Mechanic> getMechanicList() {
+        return mechanicList;
     }
 }

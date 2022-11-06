@@ -1,9 +1,14 @@
 package homework_enum.transport;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Car extends Transport implements Competing {
     private final BodyType bodyType;
+    private List<Sponsor> sponsorList = new ArrayList<>();
+    private List<Mechanic> mechanicList = new LinkedList<>();
 
     public Car(String brand, String model, float engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
@@ -58,4 +63,13 @@ public class Car extends Transport implements Competing {
     public int getMaxSpeed() {
         return ThreadLocalRandom.current().nextInt(1, 400);
     }
+
+    public List<Sponsor> getSponsorList() {
+        return sponsorList;
+    }
+
+    public List<Mechanic> getMechanicList() {
+        return mechanicList;
+    }
 }
+

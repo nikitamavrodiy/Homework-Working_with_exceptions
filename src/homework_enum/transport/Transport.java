@@ -1,10 +1,13 @@
 package homework_enum.transport;
 
+import homework_enum.driver.Driver;
+
 public abstract class Transport {
     private final String brand;
     private final String model;
     private final float engineVolume;
     private boolean isDiagnosed;
+    private Driver<Transport> driver;
 
     public Transport(String brand, String model, float engineVolume) {
         this.brand = brand;
@@ -40,8 +43,16 @@ public abstract class Transport {
         isDiagnosed = diagnosed;
     }
 
+    public Driver<Transport> getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver<Transport> driver) {
+        this.driver = driver;
+    }
+
     @Override
     public String toString() {
-        return brand +" "+ model +" "+ engineVolume;
+        return brand +" "+ model;
     }
 }
