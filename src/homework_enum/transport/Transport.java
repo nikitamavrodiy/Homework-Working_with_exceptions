@@ -4,6 +4,7 @@ public abstract class Transport {
     private final String brand;
     private final String model;
     private final float engineVolume;
+    private boolean isDiagnosed;
 
     public Transport(String brand, String model, float engineVolume) {
         this.brand = brand;
@@ -17,6 +18,12 @@ public abstract class Transport {
 
     public abstract void printType();
 
+    public abstract void passDiagnostics();
+
+    public boolean isDiagnosed() throws BusDiagnosticException {
+        return isDiagnosed;
+    }
+
     public String getBrand() {
         return brand;
     }
@@ -27,5 +34,14 @@ public abstract class Transport {
 
     public float getEngineVolume() {
         return engineVolume;
+    }
+
+    public void setDiagnosed(boolean diagnosed) {
+        isDiagnosed = diagnosed;
+    }
+
+    @Override
+    public String toString() {
+        return brand +" "+ model +" "+ engineVolume;
     }
 }
