@@ -1,11 +1,10 @@
 package homework_enum;
 
-import homework_enum.driver.Driver;
 import homework_enum.driver.DriverB;
 import homework_enum.transport.*;
 
 
-public class WorkingWithExceptions {
+public class Main {
     public static void main(String[] args) {
         Car car = new Car("bmw","x5", 1.5f, BodyType.CROSSOVER);
         DriverB driverCar = new DriverB("Carl", 2, car);
@@ -49,6 +48,7 @@ public class WorkingWithExceptions {
         }
         System.out.println("Диагностику прошли все объекты.");
     }
+
 
 
 }
