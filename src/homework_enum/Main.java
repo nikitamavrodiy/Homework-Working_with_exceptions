@@ -9,10 +9,11 @@ import homework_enum.transport.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Car car = new Car("bmw","x5", 1.5f, BodyType.CROSSOVER);
         DriverB driverCar = new DriverB("Carl", 2, car);
         Bus bus = new Bus("School","Rover", 1.3f, PassengerCapacity.S);
@@ -30,10 +31,10 @@ public class Main {
 //
 //        System.out.println();
 //
-//        car.passDiagnostics();
-//        bus.passDiagnostics();
-//        truck.passDiagnostics();
-//        areDiagnosed(car, truck, bus);
+        car.passDiagnostics();
+        bus.passDiagnostics();
+        truck.passDiagnostics();
+        areDiagnosed(car, truck, bus);
 
         System.out.println("\nHomework Lists and queues.");
         List<Transport> competingList = new ArrayList<>();
@@ -52,11 +53,11 @@ public class Main {
 //        System.out.println("Водитель("+truck+") = "+ truck.getDriver());
 //        System.out.println("Водитель("+bus+") = "+ bus.getDriver());
         List<Driver> competingDrivers = new LinkedList<>();
-//        System.out.println("Список участников(drivers):");
-//        for (Transport transport : competingList) {
-//            competingDrivers.add(transport.getDriver());
-//            System.out.println(transport.getDriver().getFullName() +" ");
-//        }
+        System.out.println("Список участников(drivers):");
+        for (Transport transport : competingList) {
+            competingDrivers.add(transport.getDriver());
+            System.out.println(transport.getDriver().getFullName() +" ");
+        }
         Car car2 = new Car("bmw","x6", 1.5f, BodyType.CROSSOVER);
         Mechanic<Car> bobster = new Mechanic<>("Bobster", "Bobich", "CarFanta", car);
         bobster.getCars().add(car2);
@@ -64,8 +65,23 @@ public class Main {
 //        System.out.println("bobster.getCars() = " + bobster.getCars());
 //        System.out.println("car.getMechanicList() = " + car.getMechanicList());
 //        System.out.println("car2.getMechanicList() = " + car2.getMechanicList());
-//
 
+
+//        HomeworkPart2 ServiceStation
+        System.out.println("\nHomeworkPart ServiceStation\n");
+        ServiceStation serviceStation = new ServiceStation();
+        serviceStation.addToServiceQueue(car, bus, truck, car2);
+        serviceStation.getCarsQueue();
+        serviceStation.performInspection();
+
+
+//        supermarket
+        System.out.println("\nHomeworkPart supermarket\n");
+        Random RANDOM = new Random();
+        SuperMarket superMarket = new SuperMarket();
+        System.out.println(superMarket.getQueues());
+        superMarket.remove();
+        System.out.println(superMarket.getQueues());
     }
 
     public static void areDiagnosed(Transport... transports) throws RuntimeException {
