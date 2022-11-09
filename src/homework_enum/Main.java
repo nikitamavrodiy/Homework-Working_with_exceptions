@@ -6,10 +6,7 @@ import homework_enum.driver.DriverC;
 import homework_enum.driver.DriverD;
 import homework_enum.transport.*;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 
 public class Main {
@@ -37,7 +34,7 @@ public class Main {
         areDiagnosed(car, truck, bus);
 
         System.out.println("\nHomework Lists and queues.");
-        List<Transport> competingList = new ArrayList<>();
+        Set<Transport> competingList = new HashSet<>();
         competingList.add(car);
         competingList.add(bus);
         competingList.add(truck);
@@ -52,7 +49,7 @@ public class Main {
 //        System.out.println("Водитель("+car+") = "+ car.getDriver());
 //        System.out.println("Водитель("+truck+") = "+ truck.getDriver());
 //        System.out.println("Водитель("+bus+") = "+ bus.getDriver());
-        List<Driver> competingDrivers = new LinkedList<>();
+        Set<Driver> competingDrivers = new HashSet<>();
         System.out.println("Список участников(drivers):");
         for (Transport transport : competingList) {
             competingDrivers.add(transport.getDriver());

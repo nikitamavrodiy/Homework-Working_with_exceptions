@@ -1,14 +1,12 @@
 package homework_enum.transport;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Car extends Transport implements Competing {
     private final BodyType bodyType;
-    private List<Sponsor> sponsorList = new ArrayList<>();
-    private List<Mechanic> mechanicList = new LinkedList<>();
+    private Set<Sponsor> sponsorList = new HashSet<>();
+    private Set<Mechanic> mechanicList = new HashSet<>();
 
     public Car(String brand, String model, float engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
@@ -64,12 +62,22 @@ public class Car extends Transport implements Competing {
         return ThreadLocalRandom.current().nextInt(1, 400);
     }
 
-    public List<Sponsor> getSponsorList() {
+    public Set<Sponsor> getSponsorList() {
         return sponsorList;
     }
 
-    public List<Mechanic> getMechanicList() {
+    public Set<Mechanic> getMechanicList() {
         return mechanicList;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }
 
