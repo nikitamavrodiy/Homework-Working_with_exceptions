@@ -17,6 +17,11 @@ public abstract class Driver<T extends Transport> {
         this.category = category;
         this.driveExperience = driveExperience;
         this.car = car;
+        signTheCar();
+    }
+
+    private void signTheCar() {
+        this.car.setDriver((Driver<Transport>) this);
     }
 
     public void checkCategory(){

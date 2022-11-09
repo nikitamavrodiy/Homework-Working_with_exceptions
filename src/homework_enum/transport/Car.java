@@ -1,9 +1,12 @@
 package homework_enum.transport;
 
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Car extends Transport implements Competing {
     private final BodyType bodyType;
+    private Set<Sponsor> sponsorList = new HashSet<>();
+    private Set<Mechanic> mechanicList = new HashSet<>();
 
     public Car(String brand, String model, float engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
@@ -58,4 +61,23 @@ public class Car extends Transport implements Competing {
     public int getMaxSpeed() {
         return ThreadLocalRandom.current().nextInt(1, 400);
     }
+
+    public Set<Sponsor> getSponsorList() {
+        return sponsorList;
+    }
+
+    public Set<Mechanic> getMechanicList() {
+        return mechanicList;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }
+
